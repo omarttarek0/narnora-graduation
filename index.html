@@ -3,40 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graduation Memory</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Happy Graduation Nour!</title>
+    <!-- خطوط جديدة حيوية وكريتيف -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-color: #F9F6F0;
-            --primary-color: #1A365D;
-            --accent-color: #D4AF37;
-            --red-card: #B71C1C; /* لون الكارت الأحمر الغامق زي الصورة */
-            --text-dark: #333333;
+            --bg-color: #FFF0F5; /* لون خلفية بينك فاتح جداً ومبهج */
+            --primary-color: #D81B60; /* لون بينك/ماجنتا حيوي */
+            --accent-color: #FF9800; /* لون ذهبي/برتقالي مشرق */
+            --red-card: #FF4081; /* لون الكارت في الظهر */
+            --text-dark: #4A4A4A;
             --card-bg: #FFFFFF;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-dark);
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 100dvh; /* متوافقة مع الموبايل 100% */
+            text-transform: capitalize; /* أول حرف من كل كلمة كابيتال */
         }
 
         .app-container {
             width: 100%;
             max-width: 400px;
-            height: 100vh;
+            height: 100dvh;
             max-height: 850px;
             position: relative;
             background-color: var(--bg-color);
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
             overflow: hidden;
         }
 
@@ -49,7 +51,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 20px;
+            justify-content: center; /* توسيط المحتوى بالطول */
+            padding: 20px 15px;
             box-sizing: border-box;
             opacity: 0;
             pointer-events: none;
@@ -64,111 +67,129 @@
         }
 
         h1, h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Dancing Script', cursive;
             color: var(--primary-color);
             margin: 10px 0;
+            font-size: 2.8rem;
+            line-height: 1.2;
+            text-transform: none; /* عشان العناوين تفضل زي ما احنا كاتبينها بالظبط */
         }
         
         .subtitle {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             letter-spacing: 2px;
-            text-transform: uppercase;
+            text-transform: uppercase; /* دي بنسيبها كلها كابيتال لأنها بتدي شكل حلو */
             color: var(--accent-color);
             margin-bottom: 5px;
+            font-weight: 700;
         }
 
-        /* الشاشة الأولى والثانية */
-        .logo-mark {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
+        /* الكروت والزراير */
         .quote-card {
             background: var(--card-bg);
             padding: 30px 20px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(216, 27, 96, 0.1);
+            margin-top: 30px;
             width: 90%;
         }
 
         .quote-card p {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
             font-size: 1.2rem;
             color: var(--primary-color);
+            font-weight: 600;
+            line-height: 1.5;
         }
 
         .btn-group {
             display: flex;
             gap: 15px;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         button {
             padding: 12px 30px;
             border: none;
             border-radius: 30px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
             font-size: 1rem;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-transform: capitalize;
         }
 
         button:active { transform: scale(0.95); }
 
-        .btn-primary { background-color: var(--primary-color); color: white; }
-        .btn-secondary { background-color: white; color: var(--text-dark); border: 1px solid #ddd; }
+        .btn-primary { 
+            background-color: var(--primary-color); 
+            color: white; 
+            box-shadow: 0 5px 15px rgba(216, 27, 96, 0.3);
+        }
+        .btn-secondary { 
+            background-color: white; 
+            color: var(--primary-color); 
+            border: 2px solid var(--primary-color); 
+        }
+        
         .btn-full {
-            width: 90%; background-color: var(--primary-color); color: white;
-            padding: 15px; border-radius: 12px; font-size: 1.1rem;
-            margin-top: auto; margin-bottom: 30px;
+            width: 90%; 
+            background-color: var(--primary-color); 
+            color: white;
+            padding: 15px; 
+            border-radius: 15px; 
+            font-size: 1.2rem;
+            margin-top: auto; 
+            margin-bottom: 30px; /* رجعناها طبيعية عشان جيت هاب مفيهوش بانر */
+            box-shadow: 0 8px 20px rgba(216, 27, 96, 0.3);
         }
 
         /* معرض الصور (السكرول) */
         .slider-container {
             width: 100vw;
             max-width: 400px;
-            height: 380px;
-            margin: 20px 0;
+            height: 320px; /* صغرناها شوية عشان تناسب الموبايل من غير ما تتقص */
+            margin: 15px 0;
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             gap: 15px;
-            padding: 10px 30px; /* مسافة عشان تبين جزء من الصورة اللي بعدها */
+            padding: 10px 30px; 
             box-sizing: border-box;
             scrollbar-width: none;
         }
         .slider-container::-webkit-scrollbar { display: none; }
 
         .slide {
-            flex: 0 0 75%; /* حجم الصورة عشان اللي جنبها تبان */
+            flex: 0 0 75%;
             height: 100%;
             scroll-snap-align: center;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             cursor: pointer;
             transition: transform 0.2s;
+            border: 3px solid white;
         }
         .slide:active { transform: scale(0.98); }
-
         .slide img { width: 100%; height: 100%; object-fit: cover; }
 
         .class-badge {
-            border-top: 1px solid var(--accent-color); border-bottom: 1px solid var(--accent-color);
-            padding: 10px 0; margin: 10px 0;
-            font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--primary-color);
+            border-top: 2px dashed var(--accent-color); 
+            border-bottom: 2px dashed var(--accent-color);
+            padding: 10px 0; 
+            margin: 10px 0 20px 0;
+            font-weight: 700; 
+            font-size: 1.1rem; 
+            color: var(--primary-color);
         }
 
-        /* الشاشة المنبثقة للصور (الـ Popup والقلبة 3D) */
+        /* الشاشة المنبثقة للصور (الـ Popup) */
         .modal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(255, 255, 255, 0.95); /* خلفية بيضاء شفافة شوية */
+            background-color: rgba(255, 240, 245, 0.95);
             z-index: 100;
             display: flex;
             justify-content: center;
@@ -178,54 +199,43 @@
             pointer-events: none;
             transition: opacity 0.3s ease;
         }
-        .modal.active {
-            opacity: 1;
-            pointer-events: all;
-        }
+        .modal.active { opacity: 1; pointer-events: all; }
 
         /* كارت الـ 3D */
         .flip-card {
             background-color: transparent;
             width: 85%;
             height: 450px;
-            perspective: 1000px; /* المسئولة عن البعد الثالث */
+            perspective: 1000px;
         }
 
         .flip-card-inner {
             position: relative;
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             text-align: center;
             transition: transform 0.8s;
             transform-style: preserve-3d;
             cursor: pointer;
         }
 
-        /* الكلاس اللي بيلف الكارت لما نضغط عليه */
-        .flip-card-inner.flipped {
-            transform: rotateY(180deg);
-        }
+        .flip-card-inner.flipped { transform: rotateY(180deg); }
 
         .flip-card-front, .flip-card-back {
             position: absolute;
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(216, 27, 96, 0.2);
             overflow: hidden;
+            border: 4px solid white;
         }
 
-        .flip-card-front img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .flip-card-front img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* تصميم الكارت الأحمر في الظهر */
+        /* ظهر الكارت */
         .flip-card-back {
-            background-color: var(--red-card);
+            background: linear-gradient(135deg, var(--primary-color), var(--red-card));
             color: white;
             transform: rotateY(180deg);
             display: flex;
@@ -234,31 +244,22 @@
             align-items: center;
             padding: 30px;
             box-sizing: border-box;
-            border: 2px solid #ff5252;
         }
 
         .flip-card-back h2 {
             color: white;
-            font-size: 1.4rem;
-            line-height: 1.6;
-            margin-top: 20px;
-            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-top: 15px;
         }
 
-        .close-hint {
-            margin-top: 30px;
+        .close-hint, .flip-hint {
             font-size: 0.8rem;
-            color: #666;
             letter-spacing: 1px;
             text-transform: uppercase;
+            font-weight: 700;
         }
-        
-        .flip-hint {
-            margin-top: 40px;
-            font-size: 0.7rem;
-            color: rgba(255,255,255,0.7);
-            letter-spacing: 1px;
-        }
+        .close-hint { margin-top: 30px; color: var(--primary-color); }
+        .flip-hint { margin-top: 40px; color: rgba(255,255,255,0.8); }
 
     </style>
 </head>
@@ -266,32 +267,38 @@
 
     <div class="app-container">
         
+        <!-- الشاشة 1 -->
         <div class="screen active" id="screen1">
-            <div class="logo-mark">L</div>
-            <div class="subtitle">A Message of Pride</div>
-            <h1>Congratulations,<br>Malak</h1> 
+            <div class="subtitle">A Special Gift For You</div>
+            <!-- تم تغيير الاسم لـ Narnora -->
+            <h1>Congratulations,<br>Narnora! ✨</h1> 
+            
             <div class="quote-card">
                 <div class="subtitle">A moment to celebrate</div>
-                <p>"Are you ready to celebrate your graduation and look back at your journey?"</p>
+                <p>Are you ready to celebrate your graduation and look back at your beautiful journey?</p>
                 <div class="btn-group">
-                    <button class="btn-primary" onclick="goToScreen('screen2')">Yes</button>
-                    <button class="btn-secondary">No</button>
+                    <button class="btn-primary" onclick="goToScreen('screen2')">Oh Yes!</button>
+                    <button class="btn-secondary">Maybe Later</button>
                 </div>
             </div>
         </div>
 
+        <!-- الشاشة 2 -->
         <div class="screen" id="screen2">
-            <div class="logo-mark" style="margin-top: 50px;">L</div>
-            <h1 style="font-size: 2.2rem; margin-top: 40px;">Congratulations<br>Graduate! 🎓</h1>
-            <p style="color: #666; margin-top: 20px;">Your journey is inside, let's see it...</p>
-            <button class="btn-full" onclick="goToScreen('screen3')">EXPLORE YOUR MEMORIES &rarr;</button>
+            <h1>Happy Graduation<br>Nour! 🎓</h1>
+            <p style="color: var(--primary-color); font-weight: 600; margin-top: 15px; font-size: 1.1rem;">
+                Your amazing journey is inside, let's explore it...
+            </p>
+            <button class="btn-full" onclick="goToScreen('screen3')">Explore Your Memories ✨</button>
         </div>
 
-        <div class="screen" id="screen3">
-            <div class="subtitle">Your university journey</div>
-            <h1 style="font-size: 1.6rem;">Every chapter of your<br><span style="color: var(--accent-color);">achievement</span></h1>
+        <!-- الشاشة 3 -->
+        <div class="screen" id="screen3" style="justify-content: flex-start; padding-top: 40px;">
+            <div class="subtitle">Your University Journey</div>
+            <h1 style="font-size: 2.2rem;">Every chapter of your<br><span style="color: var(--accent-color);">Achievement</span></h1>
             
             <div class="slider-container">
+                <!-- تأكد إن مسارات الصور دي صحيحة ومطابقة لأسماء الصور في الفولدر عندك -->
                 <div class="slide" onclick="openPopup('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
                     <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Graduation 1">
                 </div>
@@ -303,72 +310,56 @@
                 </div>
             </div>
 
-            <p style="font-size: 0.8rem; color: #888;">Swipe through memories & Tap to open</p>
+            <p style="font-size: 0.9rem; color: var(--primary-color); font-weight: 600;">Swipe through memories & Tap to open</p>
 
             <div class="class-badge">
-                ♡<br>CLASS OF 2022 — 2026
+                ♡ CLASS OF 2022 — 2026 ♡
             </div>
         </div>
 
     </div>
 
+    <!-- الشاشة المنبثقة (Popup) -->
     <div class="modal" id="imageModal" onclick="closePopup()">
-        
         <div class="flip-card" onclick="flipCard(event)">
             <div class="flip-card-inner" id="flipInner">
-                
                 <div class="flip-card-front">
                     <img id="popupImage" src="" alt="Popup">
                 </div>
-                
                 <div class="flip-card-back">
-                    <div style="font-size: 2.5rem;">🎓</div>
-                    <h2>CONGRATS TO MY FAVORITE PERSON EVER</h2>
-                    <p class="flip-hint">TAP TO FLIP BACK</p>
+                    <div style="font-size: 3rem;">🎓</div>
+                    <h2>To The Brightest Star, Narnora!</h2>
+                    <p class="flip-hint">Tap To Flip Back</p>
                 </div>
-
             </div>
         </div>
-        
-        <p class="close-hint">TAP BACKGROUND TO CLOSE</p>
+        <p class="close-hint">Tap Background To Close</p>
     </div>
 
     <script>
-        // التنقل بين الشاشات الرئيسية
         function goToScreen(screenId) {
             const screens = document.querySelectorAll('.screen');
             screens.forEach(screen => screen.classList.remove('active'));
             document.getElementById(screenId).classList.add('active');
         }
 
-        // فتح الصورة في الـ Popup
         function openPopup(imageSrc) {
             const modal = document.getElementById('imageModal');
             const popupImage = document.getElementById('popupImage');
             const flipInner = document.getElementById('flipInner');
             
-            // نحط الصورة اللي دوسنا عليها
             popupImage.src = imageSrc;
-            
-            // نتأكد إن الكارت معدول (مش مقلوب) قبل ما يفتح
             flipInner.classList.remove('flipped');
-            
-            // نظهر الشاشة
             modal.classList.add('active');
         }
 
-        // قفل الـ Popup
         function closePopup() {
             document.getElementById('imageModal').classList.remove('active');
         }
 
-        // لف الكارت لما نضغط عليه
         function flipCard(event) {
-            // السطر ده عشان لما ندوس على الكارت نفسه الـ Popup مياخدش أمر القفل
             event.stopPropagation(); 
-            
             const flipInner = document.getElementById('flipInner');
-            // يبدل الكلاس اللي بيعمل الحركة الـ 3D
             flipInner.classList.toggle('flipped');
         }
     </script>
