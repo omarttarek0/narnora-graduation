@@ -27,7 +27,7 @@
             justify-content: center;
             align-items: center;
             height: 100dvh;
-            text-transform: capitalize; /* يخلي أول حرف من كل كلمة كابيتال أوتوماتيك */
+            text-transform: capitalize; /* أول حرف كابيتال */
         }
 
         .app-container {
@@ -71,7 +71,7 @@
             margin: 10px 0;
             font-size: 2.8rem;
             line-height: 1.2;
-            text-transform: none; /* عشان العناوين تفضل بنفس التنسيق المكتوب بالظبط */
+            text-transform: none;
         }
         
         .subtitle {
@@ -83,7 +83,6 @@
             font-weight: 700;
         }
 
-        /* كروت الترحيب */
         .quote-card {
             background: var(--card-bg);
             padding: 30px 20px;
@@ -136,11 +135,11 @@
             width: 90%; 
             background-color: var(--primary-color); 
             color: white;
-            padding: 15px; 
+            padding: 12px; 
             border-radius: 15px; 
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-top: auto; 
-            margin-bottom: 10px;
+            margin-bottom: 25px; /* رفعنا الزرار عشان يظهر بوضوح */
             box-shadow: 0 8px 20px rgba(216, 27, 96, 0.3);
         }
 
@@ -148,13 +147,13 @@
         .slider-container {
             width: 100vw;
             max-width: 400px;
-            height: 300px; /* متناسقة جداً مع شاشات الموبايل */
-            margin: 15px 0;
+            height: 240px; /* ظبطنا الارتفاع عشان مياكلش مساحة الشاشة */
+            margin: 10px 0;
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             gap: 15px;
-            padding: 10px 30px; 
+            padding: 5px 30px; 
             box-sizing: border-box;
             scrollbar-width: none;
         }
@@ -170,6 +169,7 @@
             cursor: pointer;
             transition: transform 0.2s;
             border: 3px solid white;
+            position: relative;
         }
         .slide:active { transform: scale(0.98); }
         .slide img { width: 100%; height: 100%; object-fit: cover; }
@@ -184,7 +184,7 @@
             color: var(--primary-color);
         }
 
-        /* كارت الرسالة الورقي الفخم */
+        /* كارت الرسالة المنقط الفخم */
         .letter-container {
             background: #fff;
             width: 90%;
@@ -194,8 +194,8 @@
             border: 2px solid #FFF0F5;
             position: relative;
             background-image: radial-gradient(#FFF0F5 1.5px, transparent 1.5px);
-            background-size: 20px 20px; /* خلفية منقطة شيك جداً */
-            text-align: left; /* محاذاة لليسار لأن الرسالة بالإنجليزي */
+            background-size: 20px 20px;
+            text-align: left;
             display: flex;
             flex-direction: column;
             gap: 15px;
@@ -225,7 +225,7 @@
             margin-top: 10px;
         }
 
-        /* الشاشة المنبثقة للصور */
+        /* شاشة البوب أب */
         .modal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -241,11 +241,13 @@
         }
         .modal.active { opacity: 1; pointer-events: all; }
 
-        /* كارت الـ 3D */
+        /* كارت الـ 3D بأبعاد متناسقة تمنع البكسلة */
         .flip-card {
             background-color: transparent;
-            width: 85%;
-            height: 450px;
+            width: 75%;
+            max-width: 300px;
+            height: auto;
+            aspect-ratio: 3 / 4;
             perspective: 1000px;
         }
 
@@ -273,7 +275,6 @@
 
         .flip-card-front img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* ظهر كروت الصور */
         .flip-card-back {
             background: linear-gradient(135deg, var(--primary-color), var(--red-card));
             color: white;
@@ -282,14 +283,15 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 30px;
+            padding: 25px;
             box-sizing: border-box;
         }
 
         .flip-card-back h2 {
             color: white;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             margin-top: 15px;
+            text-transform: none;
         }
 
         .close-hint, .flip-hint {
@@ -322,30 +324,32 @@
         </div>
 
         <div class="screen" id="screen2">
-            <h1>Happy Graduation<br>Nour! 🎓</h1>
+            <h1>Happy Graduation<br>Narnora! 🎓</h1>
             <p style="color: var(--primary-color); font-weight: 600; margin-top: 15px; font-size: 1.1rem;">
                 Your amazing journey is inside, let's explore it...
             </p>
-            <button class="btn-full" onclick="goToScreen('screen3')">Explore Your Memories ✨</button>
+            <button class="btn-full" onclick="goToScreen('screen3')">Explore Your Photos ✨</button>
         </div>
 
         <div class="screen" id="screen3" style="justify-content: flex-start; padding-top: 30px;">
             <div class="subtitle">Your University Journey</div>
-            <h1 style="font-size: 2.2rem; margin-bottom: 5px;">Every Chapter Of Your<br><span style="color: var(--accent-color);">Achievement</span></h1>
+            <h1 style="font-size: 2.2rem; margin-bottom: 5px;">Few Photos Of Your<br><span style="color: var(--accent-color);">Achievement</span></h1>
             
             <div class="slider-container">
-                <div class="slide" onclick="openPopup('nour grad pic.jpeg')">
+                <div class="slide" onclick="openPopup('nour grad pic.jpeg', 'The most beautiful graduate ever')">
                     <img src="nour grad pic.jpeg" alt="Graduation 1">
                 </div>
-                <div class="slide" onclick="openPopup('nour 2.jpeg')">
+                
+                <div class="slide" onclick="openPopup('nour 2.jpeg', 'Literally glowing...')">
                     <img src="nour 2.jpeg" alt="Graduation 2">
                 </div>
-                <div class="slide" onclick="openPopup('https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
-                    <img src="https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Graduation 3">
+                
+                <div class="slide" onclick="openPopup('nour 3.jpeg', 'love you so much narnar')">
+                    <img src="nour 3.jpeg" alt="Graduation 3">
                 </div>
             </div>
 
-            <p style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600; margin: 0;">Swipe through memories & Tap to open</p>
+            <p style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600; margin: 0;">Swipe through photos & Tap to open</p>
 
             <div class="class-badge">
                 ♡ CLASS OF 2022 — 2026 ♡
@@ -360,14 +364,14 @@
             <div class="letter-container">
                 <div class="letter-header">Dearest Narnora,</div>
                 <div class="letter-body">
-                    Alf mabrook ya 7bebt 2lby w 3o2bal ma ashofk nag7a fe kol 7aga keda w dayman mabsota ya a7la 7d fe eldenya, w rabena y5leky lya ya narnora
+                    Alf mabrook ya 7bebt 2lby w 3o2bal ma ashofk nag7a fe kol 7aga keda w dayman mabsota ya a7la 7d fe eldenya, w rabena y5leky lya ya narnora. 
                     <br><br>
-                    Keep Shining Bright, Because The World Needs Your Light. Congrats ya 3sl, b7bk mooooot! ✨
+                    Keep Shining Bright, Because The World Needs Your Light. Congrats ya 3sl, b7bk mooooot! 
                 </div>
                 <div class="letter-footer">With All My Love, Your Whatever: Omar</div>
             </div>
 
-            <button class="btn-secondary" style="margin-top: 20px; width: 90%;" onclick="goToScreen('screen3')">⬅ Back To Memories</button>
+            <button class="btn-secondary" style="margin-top: 20px; width: 90%;" onclick="goToScreen('screen3')">⬅ Back To Photos</button>
         </div>
 
     </div>
@@ -380,8 +384,7 @@
                 </div>
                 <div class="flip-card-back">
                     <div style="font-size: 3rem;">🎓</div>
-                    <h2>To The Brightest Star, Narnora!</h2>
-                    <p class="flip-hint">Tap To Flip Back</p>
+                    <h2 id="popupMessage"></h2> <p class="flip-hint">Tap To Flip Back</p>
                 </div>
             </div>
         </div>
@@ -395,12 +398,14 @@
             document.getElementById(screenId).classList.add('active');
         }
 
-        function openPopup(imageSrc) {
+        function openPopup(imageSrc, messageText) {
             const modal = document.getElementById('imageModal');
             const popupImage = document.getElementById('popupImage');
+            const popupMessage = document.getElementById('popupMessage');
             const flipInner = document.getElementById('flipInner');
             
             popupImage.src = imageSrc;
+            popupMessage.innerText = messageText;
             flipInner.classList.remove('flipped');
             modal.classList.add('active');
         }
