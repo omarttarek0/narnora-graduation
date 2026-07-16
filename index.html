@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Graduation Nour!</title>
-    <!-- خطوط جديدة حيوية وكريتيف -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-color: #FFF0F5; /* لون خلفية بينك فاتح جداً ومبهج */
-            --primary-color: #D81B60; /* لون بينك/ماجنتا حيوي */
-            --accent-color: #FF9800; /* لون ذهبي/برتقالي مشرق */
-            --red-card: #FF4081; /* لون الكارت في الظهر */
+            --bg-color: #FFF0F5; /* بينك هادي ومبهج */
+            --primary-color: #D81B60; /* ماجنتا/بينك حيوي */
+            --accent-color: #FF9800; /* ذهبي مشرق */
+            --red-card: #FF4081; /* ظهر الكروت المقلوبة */
             --text-dark: #4A4A4A;
             --card-bg: #FFFFFF;
         }
@@ -27,8 +26,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100dvh; /* متوافقة مع الموبايل 100% */
-            text-transform: capitalize; /* أول حرف من كل كلمة كابيتال */
+            height: 100dvh;
+            text-transform: capitalize; /* يخلي أول حرف من كل كلمة كابيتال أوتوماتيك */
         }
 
         .app-container {
@@ -51,7 +50,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* توسيط المحتوى بالطول */
+            justify-content: center;
             padding: 20px 15px;
             box-sizing: border-box;
             opacity: 0;
@@ -72,19 +71,19 @@
             margin: 10px 0;
             font-size: 2.8rem;
             line-height: 1.2;
-            text-transform: none; /* عشان العناوين تفضل زي ما احنا كاتبينها بالظبط */
+            text-transform: none; /* عشان العناوين تفضل بنفس التنسيق المكتوب بالظبط */
         }
         
         .subtitle {
             font-size: 0.85rem;
             letter-spacing: 2px;
-            text-transform: uppercase; /* دي بنسيبها كلها كابيتال لأنها بتدي شكل حلو */
+            text-transform: uppercase;
             color: var(--accent-color);
             margin-bottom: 5px;
             font-weight: 700;
         }
 
-        /* الكروت والزراير */
+        /* كروت الترحيب */
         .quote-card {
             background: var(--card-bg);
             padding: 30px 20px;
@@ -116,7 +115,7 @@
             font-weight: 700;
             font-size: 1rem;
             cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s;
             text-transform: capitalize;
         }
 
@@ -141,15 +140,15 @@
             border-radius: 15px; 
             font-size: 1.2rem;
             margin-top: auto; 
-            margin-bottom: 30px; /* رجعناها طبيعية عشان جيت هاب مفيهوش بانر */
+            margin-bottom: 10px;
             box-shadow: 0 8px 20px rgba(216, 27, 96, 0.3);
         }
 
-        /* معرض الصور (السكرول) */
+        /* معرض الصور السكرول */
         .slider-container {
             width: 100vw;
             max-width: 400px;
-            height: 320px; /* صغرناها شوية عشان تناسب الموبايل من غير ما تتقص */
+            height: 300px; /* متناسقة جداً مع شاشات الموبايل */
             margin: 15px 0;
             display: flex;
             overflow-x: auto;
@@ -178,14 +177,55 @@
         .class-badge {
             border-top: 2px dashed var(--accent-color); 
             border-bottom: 2px dashed var(--accent-color);
-            padding: 10px 0; 
-            margin: 10px 0 20px 0;
+            padding: 8px 0; 
+            margin: 10px 0;
             font-weight: 700; 
             font-size: 1.1rem; 
             color: var(--primary-color);
         }
 
-        /* الشاشة المنبثقة للصور (الـ Popup) */
+        /* كارت الرسالة الورقي الفخم */
+        .letter-container {
+            background: #fff;
+            width: 90%;
+            padding: 30px 25px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(216, 27, 96, 0.1);
+            border: 2px solid #FFF0F5;
+            position: relative;
+            background-image: radial-gradient(#FFF0F5 1.5px, transparent 1.5px);
+            background-size: 20px 20px; /* خلفية منقطة شيك جداً */
+            text-align: left; /* محاذاة لليسار لأن الرسالة بالإنجليزي */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .letter-header {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            border-bottom: 2px dashed var(--accent-color);
+            padding-bottom: 5px;
+        }
+
+        .letter-body {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .letter-footer {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--accent-color);
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        /* الشاشة المنبثقة للصور */
         .modal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -233,7 +273,7 @@
 
         .flip-card-front img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* ظهر الكارت */
+        /* ظهر كروت الصور */
         .flip-card-back {
             background: linear-gradient(135deg, var(--primary-color), var(--red-card));
             color: white;
@@ -267,10 +307,8 @@
 
     <div class="app-container">
         
-        <!-- الشاشة 1 -->
         <div class="screen active" id="screen1">
             <div class="subtitle">A Special Gift For You</div>
-            <!-- تم تغيير الاسم لـ Narnora -->
             <h1>Congratulations,<br>Narnora! ✨</h1> 
             
             <div class="quote-card">
@@ -283,7 +321,6 @@
             </div>
         </div>
 
-        <!-- الشاشة 2 -->
         <div class="screen" id="screen2">
             <h1>Happy Graduation<br>Nour! 🎓</h1>
             <p style="color: var(--primary-color); font-weight: 600; margin-top: 15px; font-size: 1.1rem;">
@@ -292,34 +329,49 @@
             <button class="btn-full" onclick="goToScreen('screen3')">Explore Your Memories ✨</button>
         </div>
 
-        <!-- الشاشة 3 -->
-        <div class="screen" id="screen3" style="justify-content: flex-start; padding-top: 40px;">
+        <div class="screen" id="screen3" style="justify-content: flex-start; padding-top: 30px;">
             <div class="subtitle">Your University Journey</div>
-            <h1 style="font-size: 2.2rem;">Every chapter of your<br><span style="color: var(--accent-color);">Achievement</span></h1>
+            <h1 style="font-size: 2.2rem; margin-bottom: 5px;">Every Chapter Of Your<br><span style="color: var(--accent-color);">Achievement</span></h1>
             
             <div class="slider-container">
-                <!-- تأكد إن مسارات الصور دي صحيحة ومطابقة لأسماء الصور في الفولدر عندك -->
-                <div class="slide" onclick="openPopup('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Graduation 1">
+                <div class="slide" onclick="openPopup('nour grad pic.jpeg')">
+                    <img src="nour grad pic.jpeg" alt="Graduation 1">
                 </div>
-                <div class="slide" onclick="openPopup('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
-                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Graduation 2">
+                <div class="slide" onclick="openPopup('nour 2.jpeg')">
+                    <img src="nour 2.jpeg" alt="Graduation 2">
                 </div>
                 <div class="slide" onclick="openPopup('https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
                     <img src="https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Graduation 3">
                 </div>
             </div>
 
-            <p style="font-size: 0.9rem; color: var(--primary-color); font-weight: 600;">Swipe through memories & Tap to open</p>
+            <p style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600; margin: 0;">Swipe through memories & Tap to open</p>
 
             <div class="class-badge">
                 ♡ CLASS OF 2022 — 2026 ♡
             </div>
+
+            <button class="btn-full" onclick="goToScreen('screen4')">✉️ Open Your Letter</button>
+        </div>
+
+        <div class="screen" id="screen4">
+            <div class="subtitle" style="margin-bottom: 15px;">A Heartfelt Message</div>
+            
+            <div class="letter-container">
+                <div class="letter-header">Dearest Narnora,</div>
+                <div class="letter-body">
+                    Alf mabrook ya 7bebt 2lby w 3o2bal ma ashofk nag7a fe kol 7aga keda w dayman mabsota ya a7la 7d fe eldenya, w rabena y5leky lya ya narnora
+                    <br><br>
+                    Keep Shining Bright, Because The World Needs Your Light. Congrats ya 3sl, b7bk mooooot! ✨
+                </div>
+                <div class="letter-footer">With All My Love, Your Whatever: Omar</div>
+            </div>
+
+            <button class="btn-secondary" style="margin-top: 20px; width: 90%;" onclick="goToScreen('screen3')">⬅ Back To Memories</button>
         </div>
 
     </div>
 
-    <!-- الشاشة المنبثقة (Popup) -->
     <div class="modal" id="imageModal" onclick="closePopup()">
         <div class="flip-card" onclick="flipCard(event)">
             <div class="flip-card-inner" id="flipInner">
